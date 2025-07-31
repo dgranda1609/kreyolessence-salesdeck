@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Merriweather:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-neutral-200;
+  }
+  body {
+    @apply bg-white text-neutral-900 font-sans;
+  }
+}
+
+@layer components {
+  .slide-container {
+    @apply min-h-screen flex items-center justify-center p-8 lg:p-16;
+  }
+  
+  .slide-content {
+    @apply max-w-6xl w-full mx-auto;
+  }
+  
+  .slide-title {
+    @apply text-4xl lg:text-6xl font-display font-bold text-primary-800 mb-6;
+  }
+  
+  .slide-subtitle {
+    @apply text-xl lg:text-2xl text-neutral-600 mb-8;
+  }
+  
+  .slide-text {
+    @apply text-lg text-neutral-700 leading-relaxed;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-600 hover:bg-secondary-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-soft p-6 border border-neutral-200;
+  }
+  
+  .sidebar-nav {
+    @apply w-80 bg-primary-50 border-r border-primary-200 h-screen fixed left-0 top-0 z-30 overflow-y-auto;
+  }
+  
+  .sidebar-nav-item {
+    @apply flex items-center px-4 py-3 text-primary-700 hover:bg-primary-100 transition-colors duration-200 cursor-pointer;
+  }
+  
+  .sidebar-nav-item.active {
+    @apply bg-primary-200 text-primary-900 font-semibold;
+  }
+}
