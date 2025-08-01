@@ -3,6 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Home, TrendingUp, Users, Globe, Lightbulb, Package, Star, Heart, DollarSign, Target, Zap, BarChart, PieChart, Award, Phone } from 'lucide-react';
 
 const Sidebar = ({ currentSlide, onSlideChange, isCollapsed, onToggleCollapse }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if mobile
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   const slides = [
     { id: 1, title: 'Brand Introduction', subtitle: 'Welcome to Kreyol Essence', icon: Home },
     { id: 2, title: 'The Problem', subtitle: 'Market challenges', icon: TrendingUp },
@@ -24,13 +36,15 @@ const Sidebar = ({ currentSlide, onSlideChange, isCollapsed, onToggleCollapse })
   const sidebarVariants = {
     expanded: {
       width: '20rem',
+      x: 0,
       transition: {
         duration: 0.3,
         ease: 'easeInOut'
       }
     },
     collapsed: {
-      width: '4rem',
+      width: '20rem',
+      x: isMobile ? '-20rem' : '-16rem', // Fully hide on mobile, partial on desktop
       transition: {
         duration: 0.3,
         ease: 'easeInOut'
@@ -57,11 +71,23 @@ const Sidebar = ({ currentSlide, onSlideChange, isCollapsed, onToggleCollapse })
   };
 
   return (
-    <motion.div
-      className="sidebar-nav bg-gradient-to-b from-primary-50 to-earth-50 shadow-strong"
-      variants={sidebarVariants}
-      animate={isCollapsed ? 'collapsed' : 'expanded'}
-    >
+    <>
+      {/* Mobile backdrop */}
+      {isMobile && !isCollapsed && (
+        <motion.div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onToggleCollapse}
+        />
+      )}
+      
+      <motion.div
+        className={`sidebar-nav bg-gradient-to-b from-primary-50 to-earth-50 shadow-strong ${isMobile ? 'z-50' : ''}`}
+        variants={sidebarVariants}
+        animate={isCollapsed ? 'collapsed' : 'expanded'}
+      >
       {/* Header */}
       <div className="p-4 border-b border-primary-200">
         <div className="flex items-center justify-between">
@@ -200,6 +226,7 @@ const Sidebar = ({ currentSlide, onSlideChange, isCollapsed, onToggleCollapse })
         </AnimatePresence>
       </div>
     </motion.div>
+    </>
   );
 };
 

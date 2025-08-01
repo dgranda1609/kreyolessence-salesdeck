@@ -21,8 +21,11 @@ import Slide15 from './slides/Slide15';
 
 const App = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true); // Start collapsed
   const [direction, setDirection] = useState(0);
+  const [isHoveringEdge, setIsHoveringEdge] = useState(false);
+  const [isHoveringSidebar, setIsHoveringSidebar] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const slides = [
     { id: 1, component: Slide01 },
@@ -50,6 +53,43 @@ const App = () => {
   const handleToggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
   };
+
+  // Check if mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Auto-hide sidebar logic (desktop only)
+  useEffect(() => {
+    if (isMobile) return; // Skip hover logic on mobile
+    const handleMouseMove = (event) => {
+      const isNearLeftEdge = event.clientX <= 50; // 50px from left edge
+      setIsHoveringEdge(isNearLeftEdge);
+      
+      // Auto-show sidebar when hovering near edge
+      if (isNearLeftEdge && isCollapsed) {
+        setIsCollapsed(false);
+      }
+      // Auto-hide sidebar when not hovering over it or edge
+      else if (!isNearLeftEdge && !isHoveringSidebar && !isCollapsed) {
+        const timer = setTimeout(() => {
+          if (!isHoveringSidebar) {
+            setIsCollapsed(true);
+          }
+        }, 100); // 100ms delay - very fast
+        return () => clearTimeout(timer);
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [isCollapsed, isHoveringSidebar, isMobile]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -103,20 +143,37 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-earth-50">
-      <Sidebar
-        currentSlide={currentSlide}
-        onSlideChange={handleSlideChange}
-        isCollapsed={isCollapsed}
-        onToggleCollapse={handleToggleCollapse}
-      />
+      <div 
+        onMouseEnter={() => setIsHoveringSidebar(true)}
+        onMouseLeave={() => setIsHoveringSidebar(false)}
+      >
+        <Sidebar
+          currentSlide={currentSlide}
+          onSlideChange={handleSlideChange}
+          isCollapsed={isCollapsed}
+          onToggleCollapse={handleToggleCollapse}
+        />
+      </div>
       
+      {/* Mobile Menu Button */}
+      {isMobile && (
+        <button
+          onClick={handleToggleCollapse}
+          className="fixed top-4 left-4 z-50 p-3 bg-primary-600 text-white rounded-full shadow-strong hover:bg-primary-700 transition-colors duration-200 md:hidden"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      )}
+
       <motion.main
         className="transition-all duration-300 ease-in-out"
         style={{
-          marginLeft: isCollapsed ? '4rem' : '20rem'
+          marginLeft: isMobile ? '0' : (isCollapsed ? '0' : '20rem') // Always full width on mobile
         }}
       >
-        <div className="relative overflow-hidden min-h-screen">
+        <div className="relative min-h-screen max-h-screen overflow-y-auto">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={currentSlide}

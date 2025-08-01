@@ -91,14 +91,16 @@ const Slide04 = () => {
           >
             {/* Heritage Image */}
             <div className="card bg-gradient-to-br from-secondary-100 to-accent-100 relative overflow-hidden">
-              <div className="aspect-square bg-gradient-to-br from-secondary-200 to-accent-200 rounded-xl flex items-center justify-center mb-4">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-secondary-600 rounded-full mx-auto mb-3 flex items-center justify-center">
-                    <Globe className="w-10 h-10 text-white" />
-                  </div>
-                  <p className="text-secondary-800 font-semibold">Heritage Image</p>
-                  <p className="text-secondary-600 text-sm">Traditional Haitian Beauty</p>
-                </div>
+              <div className="aspect-square rounded-xl overflow-hidden">
+                <img 
+                  src="/images/SOS Serum_lifestyle_7.jpg"
+                  alt="Woman showcasing natural hair serum results"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <p className="text-white font-semibold">Natural Beauty Results</p>
+                <p className="text-white/80 text-sm">Authentic Haitian ingredients</p>
               </div>
             </div>
             

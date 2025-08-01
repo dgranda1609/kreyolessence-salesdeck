@@ -126,14 +126,28 @@ const Slide14 = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="card bg-white/90 backdrop-blur-sm max-w-3xl mx-auto">
-            <div className="aspect-video bg-gradient-to-br from-accent-200 to-primary-200 rounded-xl flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-accent-600 rounded-full mx-auto mb-3 flex items-center justify-center">
-                  <Award className="w-10 h-10 text-white" />
+          <div className="card bg-white/90 backdrop-blur-sm max-w-4xl mx-auto overflow-hidden">
+            <div className="relative aspect-video rounded-xl overflow-hidden">
+              <img 
+                src="/images/portfolio-full_0004.jpg"
+                alt="Kreyol Essence Leadership Team and Advisors"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-accent-900/90 via-transparent to-primary-900/90">
+                <div className="absolute left-8 top-1/2 transform -translate-y-1/2 text-white max-w-md">
+                  <h3 className="text-3xl font-bold mb-3">Expert Leadership</h3>
+                  <p className="text-lg mb-4">Leadership Team & Advisors</p>
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2">
+                      <div className="font-bold text-accent-300">50+</div>
+                      <div>Years Experience</div>
+                    </div>
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2">
+                      <div className="font-bold text-primary-300">$200M+</div>
+                      <div>Revenue Experience</div>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-accent-800 font-semibold text-lg">Team Photo</p>
-                <p className="text-accent-600 text-sm">Leadership Team & Advisors</p>
               </div>
             </div>
           </div>

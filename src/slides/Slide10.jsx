@@ -98,14 +98,28 @@ const Slide10 = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="card bg-white/90 backdrop-blur-sm max-w-3xl mx-auto">
-            <div className="aspect-video bg-gradient-to-br from-secondary-200 to-primary-200 rounded-xl flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-secondary-600 rounded-full mx-auto mb-3 flex items-center justify-center">
-                  <TrendingUp className="w-10 h-10 text-white" />
+          <div className="card bg-white/90 backdrop-blur-sm max-w-4xl mx-auto overflow-hidden">
+            <div className="relative aspect-video rounded-xl overflow-hidden">
+              <img 
+                src="/images/SOS Spot Treatment _ Lifestyle_7.jpg"
+                alt="Kreyol Essence Market Traction - Customer Using Products"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/90 via-transparent to-primary-900/90">
+                <div className="absolute left-8 top-1/2 transform -translate-y-1/2 text-white max-w-md">
+                  <h3 className="text-4xl font-bold mb-4">Explosive Growth</h3>
+                  <p className="text-xl mb-6">200% revenue increase in 6 months</p>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3">
+                      <div className="font-bold text-secondary-300">$52K</div>
+                      <div>Monthly Revenue</div>
+                    </div>
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3">
+                      <div className="font-bold text-primary-300">5,200+</div>
+                      <div>Active Customers</div>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-secondary-800 font-semibold text-lg">Growth Chart</p>
-                <p className="text-secondary-600 text-sm">Monthly Revenue & Customer Growth</p>
               </div>
             </div>
           </div>

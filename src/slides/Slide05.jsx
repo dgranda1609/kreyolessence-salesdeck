@@ -54,14 +54,21 @@ const Slide05 = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="card bg-white/90 backdrop-blur-sm max-w-2xl mx-auto">
-            <div className="aspect-video bg-gradient-to-br from-primary-200 to-earth-200 rounded-xl flex items-center justify-center mb-4">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-primary-600 rounded-full mx-auto mb-3 flex items-center justify-center">
-                  <span className="text-white font-display text-2xl font-bold">KE</span>
+          <div className="card bg-white/90 backdrop-blur-sm max-w-3xl mx-auto overflow-hidden">
+            <div className="relative aspect-video rounded-xl overflow-hidden">
+              <img 
+                src="/images/sos aloe.jpg"
+                alt="Kreyol Essence SOS Hair Serum with Aloe - Premium Natural Hair Care"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h3 className="text-3xl font-bold mb-2">SOS Hair Serum</h3>
+                  <p className="text-xl">Powered by Authentic Haitian Black Castor Oil</p>
+                  <div className="mt-4 inline-flex items-center bg-primary-600 px-4 py-2 rounded-full">
+                    <span className="text-sm font-semibold">Natural • Effective • Heritage</span>
+                  </div>
                 </div>
-                <p className="text-primary-800 font-semibold text-lg">Hero Product Image</p>
-                <p className="text-primary-600 text-sm">Haitian Black Castor Oil Collection</p>
               </div>
             </div>
           </div>

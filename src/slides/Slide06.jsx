@@ -111,14 +111,28 @@ const Slide06 = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="card bg-white/90 backdrop-blur-sm max-w-4xl mx-auto">
-            <div className="aspect-video bg-gradient-to-br from-earth-200 to-primary-200 rounded-xl flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-earth-600 rounded-full mx-auto mb-3 flex items-center justify-center">
-                  <Package className="w-12 h-12 text-white" />
+          <div className="card bg-white/90 backdrop-blur-sm max-w-5xl mx-auto overflow-hidden">
+            <div className="relative aspect-video rounded-xl overflow-hidden">
+              <img 
+                src="/images/2048x1546_1804 BANNER FINAL.jpg"
+                alt="Kreyol Essence Complete Product Collection - Natural Haitian Beauty Products"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-900/80 via-transparent to-earth-900/80">
+                <div className="absolute left-8 top-1/2 transform -translate-y-1/2 text-white max-w-md">
+                  <h3 className="text-4xl font-bold mb-4">Complete Collection</h3>
+                  <p className="text-xl mb-4">Authentic Haitian products for hair, skin & wellness</p>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3">
+                      <div className="font-bold text-primary-300">15+</div>
+                      <div>Products</div>
+                    </div>
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3">
+                      <div className="font-bold text-secondary-300">100%</div>
+                      <div>Natural</div>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-earth-800 font-semibold text-xl">Product Lineup Showcase</p>
-                <p className="text-earth-600">Complete Kreyol Essence Product Collection</p>
               </div>
             </div>
           </div>

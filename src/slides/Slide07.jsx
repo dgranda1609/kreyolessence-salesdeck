@@ -85,14 +85,18 @@ const Slide07 = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="card bg-white/90 backdrop-blur-sm max-w-xl mx-auto">
-            <div className="aspect-square bg-gradient-to-br from-secondary-200 to-accent-200 rounded-xl flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-secondary-600 rounded-full mx-auto mb-3 flex items-center justify-center">
-                  <Crown className="w-10 h-10 text-white" />
+          <div className="card bg-white/90 backdrop-blur-sm max-w-2xl mx-auto overflow-hidden">
+            <div className="relative aspect-square rounded-xl overflow-hidden">
+              <img 
+                src="/images/SOS Serum_lifestyle_8.jpg"
+                alt="Kreyol Essence SOS Serum Lifestyle - Natural Hair Care Results"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/80 via-transparent to-transparent">
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h4 className="text-2xl font-bold mb-2">Authentic Heritage</h4>
+                  <p className="text-lg">500+ years of Haitian beauty wisdom</p>
                 </div>
-                <p className="text-secondary-800 font-semibold text-lg">Brand Values Image</p>
-                <p className="text-secondary-600 text-sm">Authentic Haitian Heritage</p>
               </div>
             </div>
           </div>

@@ -128,14 +128,26 @@ const Slide11 = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="card bg-white/90 backdrop-blur-sm max-w-2xl mx-auto">
-            <div className="aspect-video bg-gradient-to-br from-green-200 to-accent-200 rounded-xl flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-green-600 rounded-full mx-auto mb-3 flex items-center justify-center">
-                  <Zap className="w-10 h-10 text-white" />
+          <div className="card bg-white/90 backdrop-blur-sm max-w-4xl mx-auto overflow-hidden">
+            <div className="relative aspect-video rounded-xl overflow-hidden">
+              <img 
+                src="/images/2048x1546_The Scalp Science You Should've Learned in Shool- SOS ACADEMY  Banner - 2.jpg"
+                alt="Kreyol Essence SOS Academy - Market Leadership in Natural Hair Science"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 via-transparent to-accent-900/90">
+                <div className="absolute left-8 top-1/2 transform -translate-y-1/2 text-white max-w-md">
+                  <h3 className="text-3xl font-bold mb-3">Market Leader</h3>
+                  <p className="text-lg mb-4">Competitive Analysis & Positioning</p>
+                  <div className="space-y-2 text-sm">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2">
+                      <span className="font-semibold">#1</span> in Authentic Haitian Heritage
+                    </div>
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2">
+                      <span className="font-semibold">500+</span> Years of Traditional Knowledge
+                    </div>
+                  </div>
                 </div>
-                <p className="text-green-800 font-semibold text-lg">Market Position Chart</p>
-                <p className="text-green-600 text-sm">Competitive Analysis & Positioning</p>
               </div>
             </div>
           </div>

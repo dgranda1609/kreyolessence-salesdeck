@@ -102,30 +102,48 @@ const Slide08 = () => {
           className="mb-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="card bg-white/90 backdrop-blur-sm">
-              <div className="aspect-square bg-gradient-to-br from-green-200 to-primary-200 rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <Heart className="w-12 h-12 text-green-600 mx-auto mb-2" />
-                  <p className="text-green-800 font-semibold">Before & After</p>
-                  <p className="text-green-600 text-sm">Hair Transformation</p>
+            <div className="card bg-white/90 backdrop-blur-sm overflow-hidden">
+              <div className="relative aspect-square rounded-xl overflow-hidden">
+                <img 
+                  src="/images/SOS Serum_lifestyle_7.jpg"
+                  alt="Before & After Hair Transformation with Kreyol Essence"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 via-transparent to-transparent">
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="font-semibold text-lg mb-1">Before & After</p>
+                    <p className="text-sm text-green-100">Hair Transformation</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="card bg-white/90 backdrop-blur-sm">
-              <div className="aspect-square bg-gradient-to-br from-primary-200 to-secondary-200 rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <Star className="w-12 h-12 text-primary-600 mx-auto mb-2" />
-                  <p className="text-primary-800 font-semibold">Customer Reviews</p>
-                  <p className="text-primary-600 text-sm">Real Testimonials</p>
+            <div className="card bg-white/90 backdrop-blur-sm overflow-hidden">
+              <div className="relative aspect-square rounded-xl overflow-hidden">
+                <img 
+                  src="/images/SOS Spot Treatment _ Lifestyle_4.jpg"
+                  alt="Happy Customer with Kreyol Essence Products"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-transparent to-transparent">
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="font-semibold text-lg mb-1">Customer Reviews</p>
+                    <p className="text-sm text-primary-100">Real Testimonials</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="card bg-white/90 backdrop-blur-sm">
-              <div className="aspect-square bg-gradient-to-br from-secondary-200 to-accent-200 rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <TrendingUp className="w-12 h-12 text-secondary-600 mx-auto mb-2" />
-                  <p className="text-secondary-800 font-semibold">Growth Results</p>
-                  <p className="text-secondary-600 text-sm">Hair Length Progress</p>
+            <div className="card bg-white/90 backdrop-blur-sm overflow-hidden">
+              <div className="relative aspect-square rounded-xl overflow-hidden">
+                <img 
+                  src="/images/SOS Serum_lifestyle_8.jpg"
+                  alt="Hair Growth Progress with Kreyol Essence"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/80 via-transparent to-transparent">
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="font-semibold text-lg mb-1">Growth Results</p>
+                    <p className="text-sm text-secondary-100">Hair Length Progress</p>
+                  </div>
                 </div>
               </div>
             </div>

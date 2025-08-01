@@ -130,11 +130,34 @@ const Slide03 = () => {
           })}
         </div>
 
+        {/* Product Showcase */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="mb-16"
+        >
+          <div className="relative rounded-2xl overflow-hidden shadow-strong">
+            <img 
+              src="/images/Banner New Products ALL NEW PRODUCTS AND FLOWERS.jpg"
+              alt="Kreyol Essence All New Products with Natural Flowers"
+              className="w-full h-80 object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-green-900/80 to-transparent">
+              <div className="absolute left-8 top-1/2 transform -translate-y-1/2 text-white max-w-md">
+                <h3 className="text-4xl font-bold mb-4">Natural Heritage</h3>
+                <p className="text-xl mb-6">Authentic Haitian botanicals meeting modern wellness needs</p>
+                <div className="text-2xl font-bold text-green-300">$79B Addressable Market</div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Total Addressable Market */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
           className="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-white text-center"
         >
           <h2 className="text-3xl font-bold mb-6">Our Total Addressable Market</h2>
