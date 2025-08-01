@@ -25,9 +25,9 @@ const Slide01 = () => {
                   <span className="font-semibold">Natural Beauty • Authentic Heritage</span>
                 </motion.div>
                 
-                <h1 className="text-6xl lg:text-8xl font-display font-bold text-primary-800 mb-4">
+                <h1 className="text-6xl lg:text-8xl font-chalet font-bold text-primary-800 mb-4">
                   Kreyol
-                  <span className="text-secondary-600"> Essence</span>
+                  <span className="text-primary-800"> Essence</span>
                 </h1>
                 
                 <motion.p
@@ -101,16 +101,14 @@ const Slide01 = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-              {/* Hero Image Placeholder */}
+              {/* Hero Image */}
               <div className="relative bg-gradient-to-br from-primary-200 to-earth-200 rounded-2xl p-8 shadow-strong">
-                <div className="aspect-square bg-gradient-to-br from-primary-300 to-earth-300 rounded-xl flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-32 bg-primary-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-white font-display text-4xl font-bold">KE</span>
-                    </div>
-                    <p className="text-primary-800 font-semibold text-lg">Hero Product Image</p>
-                    <p className="text-primary-600 text-sm">Haitian Black Castor Oil</p>
-                  </div>
+                <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center">
+                  <img 
+                    src="/images/kreyolessence-3x4-img-1.jpg"
+                    alt="Kreyol Essence Haitian Black Castor Oil Products"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 
                 {/* Floating Elements */}

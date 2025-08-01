@@ -74,6 +74,7 @@ export default {
         'serif': ['Merriweather', 'serif'],
         'display': ['Playfair Display', 'serif'],
         'script': ['Dancing Script', 'cursive'],
+        'chalet': ['Chalet-NewYorkNineteenSixty', 'serif'],
       },
       spacing: {
         '18': '4.5rem',
